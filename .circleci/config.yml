@@ -20,13 +20,13 @@ jobs:
       - checkout
       - run: echo "This is the test job"
 
-workflows:
-  build:
+workflows:  
+  build-test:
     jobs:
       - build
-  test:
-    when: << pipeline.parameters.run_workflow_test >>
-    jobs:
+      - hold:
+          type: approval
+          requires:
+            - build
       - test:
-          requires: 
-          - build
+         when: << pipeline.parameters.run_workflow_test >>
