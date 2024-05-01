@@ -2,7 +2,7 @@ version: 2.1
 
 parameters:
   run_workflow_test:
-    default: false
+    default: true
     type: boolean
 
 # Define the jobs we want to run for this project
