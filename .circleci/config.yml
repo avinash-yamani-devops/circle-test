@@ -29,4 +29,3 @@ workflows:
           requires:
             - build
       - test:
-         when: << pipeline.parameters.run_workflow_test >>
