@@ -26,5 +26,6 @@ workflows:
     jobs:
       - build
   test_workflow:
+    when: << pipeline.parameters.run_workflow_test >>
     jobs:
       - test
